@@ -39,7 +39,21 @@ ffmpeg -i your_video.mov -vf "fps=2" frames/frame_%04d.png
 python demo_viser.py --image_folder frames/
 ```
 
-**4. Run the semantic pipeline**
+**4. Run automatic object detection (optional)**
+
+If you have Grounding DINO weights:
+
+```bash
+python run.py --video your_video.mov --weights path/to/groundingdino_swint_ogc.pth
+```
+
+Without weights, pass objects manually:
+
+```bash
+python run.py --objects rug lamp tapestry desk books
+```
+
+**5. Run the semantic pipeline**
 
 ```bash
 python run.py --objects rug lamp tapestry desk books
